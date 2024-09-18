@@ -1,0 +1,19 @@
+
+CC = gcc
+OBJECTS = mylib2.o strmain.o
+OPTS = -Wall
+# Use this if you want to include debug info
+#OPTS = -Wall -g
+
+all: strmain
+
+strmain: $(OBJECTS)
+	$(CC) $(OBJECTS) -o strmain
+%.o: %.c
+	$(CC) -c $(OPTS) $<
+
+clean:
+	rm -f *.o strmain
+
+
+
